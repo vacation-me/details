@@ -39,3 +39,5 @@ vacationme.pem
 
 docker-compose.yml
 
+database/csv.tar.gz
+

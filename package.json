@@ -26,6 +26,9 @@
     "build:docker": "docker build . -t bcronin2/fec-airbnh-details && docker push bcronin2/fec-airbnh-details",
     "build:all": "npm run build:prod && npm run build:docker",
     
+    "docker:deploy": "",
+    "docker:run": "docker-compose up --build",
+    "docker:stop" : "docker-compose down --rmi local",
     "build:dev": "webpack --watch --mode development",
     "build": "webpack --mode production && grunt s3",
     "start:dev": "nodemon server/index.js",

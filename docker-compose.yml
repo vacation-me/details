@@ -5,11 +5,11 @@ services:
     image: "redis:alpine"
   database:
     container_name: vacation_me_database_server
-    image: vacation_me_database
+    image: "vacation_me_database:latest"
     build: database/
   details:
     container_name: vacation_me_details_server
-    image: vacation_me_details
+    image: "vacation_me_details:latest"
     build: .
     environment:
       PGHOST: database
