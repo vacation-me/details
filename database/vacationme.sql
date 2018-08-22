@@ -98,16 +98,16 @@ COPY hosts FROM '/database/csv/Hosts.csv' DELIMITER ',' CSV HEADER;
 COPY listing_types FROM '/database/csv/ListingTypes.csv' DELIMITER ',' CSV HEADER;
 COPY listings FROM '/database/csv/Listings.csv' DELIMITER ',' CSV HEADER;
 
-COPY house_rules FROM '/database/csv/houseRules1.csv' DELIMITER ',' CSV HEADER;
-COPY house_rules FROM '/database/csv/houseRules2.csv' DELIMITER ',' CSV HEADER;
-COPY house_rules FROM '/database/csv/houseRules3.csv' DELIMITER ',' CSV HEADER;
-COPY house_rules FROM '/database/csv/houseRules4.csv' DELIMITER ',' CSV HEADER;
+COPY house_rules FROM '/database/csv/HouseRules1.csv' DELIMITER ',' CSV HEADER;
+COPY house_rules FROM '/database/csv/HouseRules2.csv' DELIMITER ',' CSV HEADER;
+COPY house_rules FROM '/database/csv/HouseRules3.csv' DELIMITER ',' CSV HEADER;
+COPY house_rules FROM '/database/csv/HouseRules4.csv' DELIMITER ',' CSV HEADER;
 
 
-COPY highlights FROM '/database/csv/highlights1.csv' DELIMITER ',' CSV HEADER;
-COPY highlights FROM '/database/csv/highlights2.csv' DELIMITER ',' CSV HEADER;
-COPY highlights FROM '/database/csv/highlights3.csv' DELIMITER ',' CSV HEADER;
-COPY highlights FROM '/database/csv/highlights4.csv' DELIMITER ',' CSV HEADER;
+COPY highlights FROM '/database/csv/Highlights1.csv' DELIMITER ',' CSV HEADER;
+COPY highlights FROM '/database/csv/Highlights2.csv' DELIMITER ',' CSV HEADER;
+COPY highlights FROM '/database/csv/Highlights3.csv' DELIMITER ',' CSV HEADER;
+COPY highlights FROM '/database/csv/Highlights4.csv' DELIMITER ',' CSV HEADER;
 
 
 COPY cancellation_policies FROM '/database/csv/CancellationPolicies1.csv' DELIMITER ',' CSV HEADER;

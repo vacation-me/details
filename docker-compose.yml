@@ -12,7 +12,7 @@ services:
     image: vacation_me_details
     build: .
     environment:
-      PGHOST: postgres
+      PGHOST: database
       PGUSER: marcelinoornelas
       PGDATABASE: vacation_me
       # PGPASSWORD: 

@@ -2,6 +2,8 @@ const pg = require('pg');
 const cache = require('./vacation-me-cache');
 const promise = require('bluebird');
 
+console.log(process.env.PGHOST);
+
 const pool = new pg.Pool();
 
 pool.on('error', function(err) {
