@@ -2,6 +2,7 @@ version: '3'
 
 services:
   redis:
+    container_name: vacation_me_cache_server
     image: "redis:alpine"
   database:
     container_name: vacation_me_database_server
@@ -13,7 +14,7 @@ services:
     build: .
     environment:
       PGHOST: database
-      PGUSER: marcelinoornelas
+      PGUSER: postgres
       PGDATABASE: vacation_me
       # PGPASSWORD: 
       # NEW_RELIC_KEY:

@@ -12,7 +12,7 @@ EXPOSE 3001
 ENV PORT 3001
 
 # ENV PGHOST put/url/here
-ENV PGUSER marcelinoornelas
+# ENV PGUSER marcelinoornelas
 ENV PGDATABASE vacation_me
 # ENV PGPASSWORD password
 

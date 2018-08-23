@@ -16,6 +16,7 @@ Detail.getListing = function(listingid) {
 };
 
 const formatListing = function(data) {
+  console.log('format listing data: ', ...data);
   var listing = data[0].rows[0];
 
   listing.houseRules = data[1].rows;
@@ -35,6 +36,7 @@ const formatListing = function(data) {
 };
 
 const _getListingFromDatabase = function(listingid) {
+  console.log('Getting data from database');
   return db.connectAndEnd(function(client) {
     var listings = query(
       client,
@@ -62,6 +64,7 @@ const _getListingFromDatabase = function(listingid) {
 
     var promises = [listings, house_rules, cancellation_policies, highlights];
 
+    console.log('after query');
     return promise.all(promises).then(formatListing);
   });
 };

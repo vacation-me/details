@@ -12,6 +12,7 @@ ctrl.show = function(req, res) {
 
   db.Detail.getListing(listingId)
     .then(function(listing) {
+      console.log('controller listing:', listing);
       res.json(listing);
     })
     .catch(function(err) {

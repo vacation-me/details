@@ -15,16 +15,18 @@ pool.on('error', function(err) {
 module.exports = pool;
 
 pool.connectAndEnd = function(action) {
-  return pool.connect(function(err, client) {
-    return action(client)
-      .then(function(res) {
-        client.release();
-        return promise.resolve(res);
-      })
-      .catch(function(err) {
-        client.release();
-        return promise.reject(err);
-      });
+  return new promise(function(resolve, reject) {
+    pool.connect(function(err, client) {
+      return action(client)
+        .then(function(res) {
+          client.release();
+          return resolve(res);
+        })
+        .catch(function(err) {
+          client.release();
+          return reject(err);
+        });
+    });
   });
 };
 

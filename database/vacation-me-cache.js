@@ -17,7 +17,9 @@ module.exports = {
 };
 
 function getListingCache(key) {
-  return client.getAsync('postgres:' + key);
+  return client.getAsync('postgres:' + key).then(function(data) {
+    return promise.resolve(JSON.parse(data));
+  });
 }
 
 function setListingCache(key, ttl, data, cb) {
