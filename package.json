@@ -26,7 +26,7 @@
     "build:docker": "docker build . -t bcronin2/fec-airbnh-details && docker push bcronin2/fec-airbnh-details",
     "build:all": "npm run build:prod && npm run build:docker",
     
-    "docker:deploy": "",
+    "docker:deploy": "./docker-deploy.sh",
     "docker:run": "docker-compose up --build",
     "docker:stop" : "docker-compose down --rmi all",
     "build:dev": "webpack --watch --mode development",

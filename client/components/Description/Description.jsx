@@ -19,8 +19,13 @@ export default class Description extends React.Component {
 
   render() {
     const { description, additionalDescription } = this.props;
+
+    if (!description || !additionalDescription) {
+      return <div>Loading description....</div>;
+    }
+
     const { expanded } = this.state;
-    const mainContent = <DescriptionMain description={description} />;
+    const mainContent = <DescriptionMain main={description} />;
     const moreContent = (
       <DescriptionMore additionalDescription={additionalDescription} />
     );
@@ -52,7 +57,7 @@ const DescriptionMain = props => {
 };
 
 DescriptionMain.propTypes = {
-  description: PropTypes.string.isRequired
+  main: PropTypes.string.isRequired
 };
 
 const DescriptionMore = props => {

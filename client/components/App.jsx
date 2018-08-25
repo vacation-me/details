@@ -63,6 +63,7 @@ export default class App extends React.Component {
       cancellationPolicy,
       videoSource
     } = listingData;
+
     if (dataReady) {
       return (
         <div id="Details">
@@ -85,12 +86,14 @@ export default class App extends React.Component {
           )}
           {houseRules && <HouseRules houseRules={houseRules} />}
           {cancellationPolicy && (
-            <CancellationPolicy cancellationPolicy={cancellationPolicy} />
+            <CancellationPolicy
+              cancellationPolicy={cancellationPolicy[0] /* only should be one*/}
+            />
           )}
           {videoSource && <VideoPlayer videoSource={videoSource} />}
         </div>
       );
     }
-    return <div>Hello, world!</div>;
+    return <div>Loading....</div>;
   }
 }
