@@ -16,6 +16,7 @@ Detail.getListing = function(listingid) {
 };
 
 const formatListing = function(data) {
+  process.env.VERBOSE && console.log('format data:', data);
   var listing = data[0].rows[0];
 
   listing.houseRules = data[1].rows;
@@ -36,6 +37,7 @@ const formatListing = function(data) {
 
 const _getListingFromDatabase = function(listingid) {
   return db.connectAndEnd(function(client) {
+    process.env.VERBOSE && console.log('client in getListingFromDB', client);
     var listings = query(
       client,
       `\
@@ -62,7 +64,12 @@ const _getListingFromDatabase = function(listingid) {
 
     var promises = [listings, house_rules, cancellation_policies, highlights];
 
-    return promise.all(promises).then(formatListing);
+    return promise
+      .all(promises)
+      .then(formatListing)
+      .catch(function(err) {
+        process.env.VERBOSE && console.log('error in querys:', err);
+      });
   });
 };
 

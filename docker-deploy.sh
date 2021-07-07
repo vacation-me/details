@@ -1,0 +1,5 @@
+docker tag vacation_me_details mornelas/vacation_me_details:latest
+docker tag vacation_me_database mornelas/vacation_me_database:latest
+
+docker push mornelas/vacation_me_details:latest
+docker push mornelas/vacation_me_database:latest
